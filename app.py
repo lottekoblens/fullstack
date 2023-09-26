@@ -1,5 +1,6 @@
 from flask import Flask
 import beginnen
+import felixfile
 
 app = Flask(__name__)
 
@@ -23,3 +24,7 @@ def databaseDieren():
 @app.route("/zoeken/<dier>")
 def databaseZoeken(dier):
     return beginnen.database(dier)
+
+@app.route("/felix/<gegeven>")
+def methodeFelix(gegeven):
+    return felixfile.methodenaam(gegeven)
