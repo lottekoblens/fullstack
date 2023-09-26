@@ -3,6 +3,7 @@ from flask_cors import CORS
 
 import beginnen
 import felixfile
+import turkije
 
 app = Flask(__name__)
 CORS(app)
@@ -30,3 +31,7 @@ def databaseZoeken(dier):
 @app.route("/felix/<gegeven>")
 def methodeFelix(gegeven):
     return felixfile.methodenaam(gegeven)
+
+@app.route("/lotte")
+def methodeTurkije():
+    return turkije.turkijeinformatie()
